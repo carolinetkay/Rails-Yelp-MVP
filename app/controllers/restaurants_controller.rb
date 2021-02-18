@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @reviews = Review.where(restaurant: @restaurant)
   end
 
   def new
@@ -14,10 +15,10 @@ class RestaurantsController < ApplicationController
 
   def create
     restaurant_params = params.require(:restaurant).permit(:name, :address, :category, :phone_number)
-    @new_restaurant = Restaurant.new(restaurant_params)
+    @restaurant = Restaurant.new(restaurant_params)
 
-    if @new_restaurant.save
-      redirect_to restaurant_path(@new_restaurant)
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant)
     else
       render :new
     end

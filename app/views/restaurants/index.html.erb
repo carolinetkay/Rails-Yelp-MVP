@@ -3,7 +3,7 @@
 
 <% @restaurants.each do |resto| %>
     <li>
-      <strong><%= resto.name %></strong><br>
+      <strong><%= link_to resto.name, restaurant_path(resto) %></strong><br>
       <%= resto.address %><br>
       <%= resto.category.capitalize %><br>
       <%= resto.phone_number %><br>

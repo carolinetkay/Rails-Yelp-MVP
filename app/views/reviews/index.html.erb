@@ -1,0 +1,9 @@
+<br>
+<h1>Hi, welcome to the reviews for <%= @restaurant.name %> !</h1>
+<br>
+<% @reviews.each do |review| %>
+Review: <%= review.content %><br>
+Rating: <%= review.rating %> out of 5
+<br>
+<br>
+<% end %>
