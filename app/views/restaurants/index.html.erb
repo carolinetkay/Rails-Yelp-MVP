@@ -1,0 +1,12 @@
+<h1>Welcome to The Restaurants Universe!</h1>
+<p>Tasty foods galore...</p>
+
+<% @restaurants.each do |resto| %>
+    <li>
+      <strong><%= resto.name %></strong><br>
+      <%= resto.address %><br>
+      <%= resto.category.capitalize %><br>
+      <%= resto.phone_number %><br>
+      <br>
+    </li>
+<% end %>
