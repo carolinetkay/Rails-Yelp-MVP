@@ -1,6 +1,9 @@
 <br>
 <h1>Hi, welcome to the reviews for <%= @restaurant.name %> !</h1>
 <br>
+<%= link_to 'Write a new Review', new_restaurant_review_path(@restaurant), class: ' btn btn-primary' %>
+<br>
+<br>
 <% @reviews.each do |review| %>
 Review: <%= review.content %><br>
 Rating: <%= review.rating %> out of 5
